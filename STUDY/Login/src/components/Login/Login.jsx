@@ -23,17 +23,17 @@ export default function Login() {
     try {
       const success = await LoginUser(userid, password);
 
-      if (success) {
-        Alert.fire({
-          icon: 'success',
-          title: '로그인 성공'
-        });
-      } else {
-        Alert.fire({
-          icon: 'warning',
-          title: '로그인 실패'
-        });
-      }
+      // if (success) {
+      //   Alert.fire({
+      //     icon: 'success',
+      //     title: '로그인 성공'
+      //   });
+      // } else {
+      //   Alert.fire({
+      //     icon: 'warning',
+      //     title: '로그인 실패'
+      //   });
+      // }
     } catch (error) {
       Alert.fire({
         icon: 'error',
