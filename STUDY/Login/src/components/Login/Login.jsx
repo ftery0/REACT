@@ -23,7 +23,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-====== react
+
       const success = await loginUser(userid, password);
       console.log(userid)
       console.log(password)
@@ -38,22 +38,8 @@ export default function Login() {
           title: '로그인 실패'
         });
       }
-=======
-      const success = await LoginUser(userid, password);
-
-      // if (success) {
-      //   Alert.fire({
-      //     icon: 'success',
-      //     title: '로그인 성공'
-      //   });
-      // } else {
-      //   Alert.fire({
-      //     icon: 'warning',
-      //     title: '로그인 실패'
-      //   });
-      // }
-======= main
-    } catch (error) {
+    } 
+    catch (error) {
       Alert.fire({
         icon: 'error',
         title: '로그인 중 오류가 발생했습니다.'
