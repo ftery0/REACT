@@ -1,6 +1,5 @@
 import axios from "axios";
 
-====== react
 const loginUser = async (userid, password) => {
 const SERVERURL = "#"; 
   try {
@@ -22,7 +21,6 @@ const SERVERURL = "#";
 };
 
 export { loginUser };
-=======
 export async function LoginUser(userId, password) {
   const SERVERURL = "#"; 
 
@@ -42,4 +40,3 @@ export async function LoginUser(userId, password) {
     throw error;
   }
 }
-===== main
