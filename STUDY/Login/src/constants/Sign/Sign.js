@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export async function LoginUser(userId, password) {
-  const SERVERURL = "...."; 
+const signup= async (userId, password)=>{
+  const SERVERURL = "#"; 
 
   try {
     const response = await axios.post(SERVERURL, {
@@ -19,3 +19,4 @@ export async function LoginUser(userId, password) {
     throw error;
   }
 }
+export {signup};

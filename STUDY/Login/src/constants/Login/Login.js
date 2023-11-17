@@ -1,18 +1,22 @@
-// Login.js
 import axios from "axios";
 
 const loginUser = async (userid, password) => {
+const SERVERURL = "#"; 
   try {
-    const response = await axios.post("<Your API Endpoint>", {
+    const response = await axios.post(" ", {
       userid: userid,
       password: password,
     });
     const userData = response.data;
 
-    return true;
+     if (response.status === 200) {
+        return true;
+      } else {
+        return false;
+      }
   } catch (error) {
     console.error("Login failed:", error);
-    return false;
+    throw error;
   }
 };
 
