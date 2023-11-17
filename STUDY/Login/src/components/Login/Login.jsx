@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { LoginUser } from "../../constants/Login/Login";
+import { loginUser } from "../../constants/Login/Login";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [userid, setUserId] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const Alert = Swal.mixin({
     toast: true,
@@ -21,6 +23,22 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
+====== react
+      const success = await loginUser(userid, password);
+      console.log(userid)
+      console.log(password)
+      if (success) {
+        Alert.fire({
+          icon: 'success',
+          title: '로그인 성공'
+        });
+      } else {
+        Alert.fire({
+          icon: 'warning',
+          title: '로그인 실패'
+        });
+      }
+=======
       const success = await LoginUser(userid, password);
 
       // if (success) {
@@ -34,6 +52,7 @@ export default function Login() {
       //     title: '로그인 실패'
       //   });
       // }
+======= main
     } catch (error) {
       Alert.fire({
         icon: 'error',
@@ -73,7 +92,7 @@ export default function Login() {
           />
         </form>
         <div className="signup-link">
-          <p>계정이 없으신가요? <button>회원가입</button></p>
+          <p>계정이 없으신가요? <button onClick={()=>navigate("/signup")}>회원가입</button></p>
         </div>
       </div>
     </div>
