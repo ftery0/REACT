@@ -5,22 +5,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
   }
-  
+  .Sigup-group>h2{
+    position: absolute;
+    top: 40px;
+  }
   .Sigup-group {
-    width: 400px;
-    height: 400px; 
+    width: 25%;
+    height: 60vh; 
     border: 2px outset black;
     border-radius: 20px;
     display: flex;
     flex-direction: column; 
     align-items: center;
     justify-content: center;
+    position: absolute;
+    animation-name: Sigupgroup;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
   }
   
   form {
-    width: 300px;
-    height: auto; 
+    width: 80%;
+    height: 50%; 
   }
   
   .Sigup1 {
@@ -51,6 +60,8 @@
   }
   
   .login-link {
+    position: absolute;
+    bottom: 7%;
     margin-top: 10px; 
     text-align: center;
   }
@@ -62,4 +73,7 @@
     text-decoration: underline;
     font-size: 15px;
   }
-  
+  @keyframes Sigupgroup {
+    0% {opacity: 0;}
+    100%{opacity: 1;}
+  }

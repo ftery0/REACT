@@ -1,13 +1,14 @@
 
 import axios from "axios";
 
-const signup= async (userId, password)=>{
+const signup= async (userId, password,repassword)=>{
   const SERVERURL = "#"; 
 
   try {
     const response = await axios.post(SERVERURL, {
       userId: userId,
       password: password,
+      repassword: repassword,
     });
 
     if (response.status === 200) {
