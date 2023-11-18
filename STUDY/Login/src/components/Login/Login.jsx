@@ -51,7 +51,7 @@ export default function Login() {
     <div className="Login">
       <div className="login-group">
         <h2>로그인</h2>
-        <form action="">
+        <form action="" className="login_form">
           <p>
             <input
               className="login1"
