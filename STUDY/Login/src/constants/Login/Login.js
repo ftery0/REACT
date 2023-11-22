@@ -31,6 +31,9 @@ export async function LoginUser(userId, password) {
     });
 
     if (response.status === 200) {
+    const { accessToken, refreshToken } = response.data.data;
+    localStorage.setItem("accessToken",accessToken)
+    localStorage.setItem("refreshToken",refreshToken)
       return true;
     } else {
       return false;
