@@ -12,7 +12,7 @@
 .login-group {
   width: 25%;
   height: 50%;
-  border: 2px outset black;
+  border: 2px solid rgb(158, 156, 156);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
