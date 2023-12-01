@@ -31,6 +31,7 @@ export default function Signup() {
       const success = await signup(userid, password, repassword);
       if (success) {
         showToast("success", "회원가입 성공");
+        navigate("/")
       } else {
         showToast("warning", "회원가입 실패");
       }

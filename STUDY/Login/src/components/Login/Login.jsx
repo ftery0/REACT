@@ -29,6 +29,7 @@ export default function Login() {
       console.log(password);
       if (success) {
         showToast("success", "로그인 성공");
+        navigate("/Main")
       } else {
         showToast("warning", "로그인 실패");
       }
@@ -51,7 +52,6 @@ export default function Login() {
               onChange={lookingForNum}
             />
           </p>
-
           <p>
             <input
               className="login2"
