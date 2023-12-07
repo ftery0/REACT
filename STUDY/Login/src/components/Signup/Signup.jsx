@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { showToast } from "../../constants/Swal/Swal_alert";
 import { signup } from "../../constants/Sign/Sign";
 import "./Signup.css";
+import LOGO from "../../assets/img/Lofo.png";
 
 export default function Signup() {
   const [userid, setUserId] = useState("");
@@ -31,7 +32,7 @@ export default function Signup() {
       const success = await signup(userid, password, repassword);
       if (success) {
         showToast("success", "회원가입 성공");
-        navigate("/")
+        navigate("/");
       } else {
         showToast("warning", "회원가입 실패");
       }
@@ -43,46 +44,61 @@ export default function Signup() {
   return (
     <div className="SigupMain">
       <div className="Sigup-group">
-        <h2>회원가입</h2>
-        <form action="" onSubmit={signupclick}>
-          <p>
-            <input
-              className="Sigup1"
-              type="text"
-              name="username"
-              placeholder="아이디"
-              value={userid}
-              onChange={lookingForNum}
-            />
-          </p>
-          <p>
-            <input
-              className="Sigup2"
-              type="password"
-              name="pwd"
-              placeholder="비밀번호"
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-            />
-          </p>
-          <p>
-            <input
-              className="Sigup2"
-              type="password"
-              name="pwd"
-              placeholder="비밀번호를 다시 써주세요"
-              onChange={(event) => {
-                setRepassword(event.target.value);
-              }}
-            />
-          </p>
-          <input type="submit" className="submit" value="회원가입" />
-        </form>
-        <div className="login-link">
-          <p>
-            로그인 하기 <button onClick={() => navigate("/")}>로그인</button>
-          </p>
+        <div class="logo">
+          <img src={LOGO} />
+        </div>
+        <div className="sc-breuTDiVspsI">
+          <div class="Main_FR">
+            
+
+            <form action="" className="signupFrom" onSubmit={signupclick}>
+            <h1>회원가입</h1>
+              
+              <div className="sigupId">
+                <div className="idtext">ID</div>
+                <input
+                  className="Sigup1"
+                  type="text"
+                  name="username"
+                  placeholder="dgsw1214"
+                  value={userid}
+                  onChange={lookingForNum}
+                />
+              </div>
+              <div className="sigupPW">
+              <div className="paswordtext">비밀번호</div>
+                <input
+                  className="Sigup2"
+                  type="password"
+                  name="pwd"
+                  placeholder="비밀번호"
+                  onChange={(event) => {
+                    setPassword(event.target.value);
+                  }}
+                />
+              </div>
+              <div className="sigupPW">
+              <div className="paswordtextAg">비밀번호</div>
+                <input
+                  className="Sigup2"
+                  type="password"
+                  name="pwd"
+                  placeholder="비밀번호를 다시 써주세요"
+                  onChange={(event) => {
+                    setRepassword(event.target.value);
+                  }}
+                />
+              </div>
+              <input type="submit" className="submit" value="회원가입" />
+              <div className="login-link">
+              <p>
+                로그인 하기
+                <button onClick={() => navigate("/")}>로그인</button>
+              </p>
+            </div>
+            </form>
+            
+          </div>
         </div>
       </div>
     </div>
