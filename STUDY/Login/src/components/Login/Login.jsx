@@ -46,7 +46,7 @@ export default function Login() {
           <img src={LOGO} />
         </div>
         <div className="sc-breuTDiVspsI">
-          <div class="Main_login">
+          <div class="Main_FR">
             <form action="" className="login_form">
               <h1>로그인</h1>
               <div className="loginid">

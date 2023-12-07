@@ -56,13 +56,14 @@
   width: 350px;
   display: flex;
   flex-direction: column;
+  row-gap: 28px;
   justify-content: space-between;
 }
 form {
   width: 30%;
   height: auto;
 }
-.Main_login{
+.Main_FR{
   width: 100%;
   height: 100%;
   display: flex;
