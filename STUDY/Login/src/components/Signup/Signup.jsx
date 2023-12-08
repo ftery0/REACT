@@ -71,14 +71,14 @@ export default function Signup() {
                   className="Sigup2"
                   type="password"
                   name="pwd"
-                  placeholder="비밀번호"
+                  placeholder="dgsw2023"
                   onChange={(event) => {
                     setPassword(event.target.value);
                   }}
                 />
               </div>
               <div className="sigupPW">
-              <div className="paswordtextAg">비밀번호</div>
+              <div className="paswordtextAg">새로운 비밀번호</div>
                 <input
                   className="Sigup2"
                   type="password"
