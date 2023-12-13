@@ -68,5 +68,14 @@ header > .LOGO{
     font-size: 19px;
     font-weight: 700;
     margin-top: 20px;
+    animation-name: menuBarCTAni;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes menuBarCTAni{
+    0%{height: 0px; border: none ; opacity: 0; }
+    20%{ border-color: rgb(161, 161, 161) ;}
+    70%{ opacity: 1; border-bottom: 1px solid  rgb(161, 161, 161);}
+    100%{height: 50px; border-bottom: 1px solid  rgb(161, 161, 161);}
 }
 
