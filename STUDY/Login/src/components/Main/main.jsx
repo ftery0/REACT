@@ -39,7 +39,9 @@ class Main extends Component {
                     </div>
                 )}
                 </header>
-               
+               <div className="MAINVIEW">
+              
+               </div>
             </div>
         );
     }
