@@ -30,7 +30,7 @@ export default function Login() {
       console.log(password);
       if (success) {
         showToast("success", "로그인 성공");
-        navigate("/Main");
+        navigate("/main");
       } else {
         showToast("warning", "로그인 실패");
       }
