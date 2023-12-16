@@ -69,20 +69,33 @@ header > .LOGO{
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 80%;
-    height: 50px;
-    border-bottom: 1px solid  rgb(161, 161, 161);
+    gap: 10px;
+    flex-direction: column;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
     font-size: 19px;
     font-weight: 700;
-    margin-top: 20px;
     animation-name: menuBarCTAni;
     animation-duration: 2s;
     animation-fill-mode: forwards;
+    &:hover {
+        background-color:rgb(161, 161, 161) ;
+        color: #fff;
+      }
+    
 }
 @keyframes menuBarCTAni{
     0%{height: 0px; border: none ; opacity: 0; }
-    20%{ border-color: rgb(161, 161, 161) ;}
-    70%{ opacity: 1; border-bottom: 1px solid  rgb(161, 161, 161);}
-    100%{height: 50px; border-bottom: 1px solid  rgb(161, 161, 161);}
+    70%{ opacity: 1; }
+    100%{height: 60px;}
 }
+.MenuNV{
+    display: flex;
 
+}
+.UNDERBAR{
+    display: flex;
+    width: 70%;
+    border-bottom: 1px solid  rgb(161, 161, 161);
+}
