@@ -8,12 +8,6 @@ const Main = () => {
     const menuClickTR = () => {
         setMenuVisible(false);
     };
-    menuClickFA = () => {
-
-        this.setState({ isMenuVisible: true})
-    }
-
-
     const menuClickFA = () => {
         setMenuVisible(true);
     };
@@ -34,11 +28,17 @@ const Main = () => {
                         </div>
                         <div className="menuBar">
                             <div className="MenuBarCT" id="MENUNUMBER1">
-                                <div className="MenuNV">내정보</div>
+                                <div className="MenuNV"><span>내정보</span></div>
                                 <div className="UNDERBAR"></div>
                             </div>
-                            <div className="MenuBarCT" id="MENUNUMBER2">작품</div>
-                            <div className="MenuBarCT" id="MENUNUMBER3">추억</div>
+                            <div className="MenuBarCT" id="MENUNUMBER2">
+                            <div className="MenuNV"><span>작품</span></div>
+                            <div className="UNDERBAR"></div>
+                            </div>
+                            <div className="MenuBarCT" id="MENUNUMBER3">
+                            <div className="MenuNV"><span>추억</span></div>
+                            <div className="UNDERBAR"></div>
+                            </div>
                         </div>
                         
                     </div>
