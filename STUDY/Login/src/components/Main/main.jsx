@@ -70,7 +70,6 @@ const Main = () => {
         <div className="POST">
           <div className="Create_Post">
             <div className="Real_Post">
-                
             </div>
             {posts?.map((post)=>{
                 <div className="Real_Post" key={post.id}>
