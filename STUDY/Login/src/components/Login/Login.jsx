@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import LOGO from "../../assets/img/Lofo.png";
 
 export default function Login() {
-  const [userid, setUserId] = useState("");
+  const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ export default function Login() {
   const lookingForNum = (e) => {
     const inputValue = e.target.value;
     const onlyEnglishAndNumbers = inputValue.replace(/[^a-zA-Z0-9]/g, "");
-    setUserId(onlyEnglishAndNumbers);
+    setId(onlyEnglishAndNumbers);
   };
 
   const lookingForNumInPassword = (e) => {
@@ -25,16 +25,15 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const success = await loginUser(userid, password);
-      console.log(userid);
-      console.log(password);
+      const success = await loginUser(id, password);
       if (success) {
         showToast("success", "로그인 성공");
         navigate("/main");
-      } else {
+      } else{
         showToast("warning", "로그인 실패");
       }
     } catch (error) {
+      console.log(error);
       showToast("error", "로그인 중 오류가 발생했습니다.");
     }
   };
