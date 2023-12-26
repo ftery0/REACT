@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./main.css";
 import Menu from "../../assets/img/dehaze.png";
 import axios from "axios";
+import Cookies from 'js-cookie';
 
 const Main = () => {
-    const SERVERURL ="";
+    const SERVERURL ="http://localhost:8080";
   const [isMenuVisible, setMenuVisible] = useState(true);
   const [posts, setPosts] = useState([]);
+  const [name , setName] = useState();
+  
   const menuClickTR = () => {
     setMenuVisible(false);
   };
@@ -14,25 +17,50 @@ const Main = () => {
     setMenuVisible(true);
   };
   useEffect(() => {
-    const Posts = async () => {
-        const acessToken = localStorage.getItem("acessToken");
-        try {
-            const response = await axios.get(`${SERVERURL}/list`, {
-                acessToken: acessToken,
-              });
-              setPosts(response.data);
-        } catch (error) {
-            console.log("error",error);
-        }
-
+    
+    const accessToken = localStorage.getItem("accessToken");
+  
+    const getUserInfo = async () => {
+      try {
+        const response = await axios.get(`${SERVERURL}/profile`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        console.log(response);
+        setName(response.data.username);
+      } catch (error) {
+        console.log("error", error);
+      }
     };
-    Posts();
+  
+    getUserInfo();
   }, []);
+
+    // const Posts = async () => {
+    //     try {
+    //       const response = await axios.get(`${SERVERURL}/list`, {
+    //         headers: {
+    //           Authorization: `Bearer ${accessToken}`
+    //         },
+    //       });
+    //       setPosts(response.data);
+    //     } catch (error) {
+    //       console.log("error", error);
+    //     }
+    // }
+//     getUserInfo();
+//     // Posts();
+//   }, []);
+ 
+  
 
   return (
     <div className="Main">
+        <p className="username">{name}</p>
       <header className="header">
         <h1 className="LOGO">TEST</h1>
+        
         {isMenuVisible && (
           <div className="menuHeader" onClick={menuClickTR}>
             <img src={Menu} alt="Menu" />

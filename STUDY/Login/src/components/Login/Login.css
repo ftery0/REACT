@@ -147,3 +147,10 @@ form {
   0% {opacity: 0;}
   100%{opacity: 1;}
 }
+.username{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+}
