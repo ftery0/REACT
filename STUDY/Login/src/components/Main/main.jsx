@@ -19,7 +19,6 @@ const Main = () => {
   useEffect(() => {
     
     const accessToken = localStorage.getItem("accessToken");
-  
     const getUserInfo = async () => {
       try {
         const response = await axios.get(`${SERVERURL}/profile`, {
@@ -27,8 +26,7 @@ const Main = () => {
             Authorization: `Bearer ${accessToken}`,
           },
         });
-        console.log(response);
-        setName(response.data.username);
+        setName(response.data.data.username);
       } catch (error) {
         console.log("error", error);
       }
@@ -36,25 +34,7 @@ const Main = () => {
   
     getUserInfo();
   }, []);
-
-    // const Posts = async () => {
-    //     try {
-    //       const response = await axios.get(`${SERVERURL}/list`, {
-    //         headers: {
-    //           Authorization: `Bearer ${accessToken}`
-    //         },
-    //       });
-    //       setPosts(response.data);
-    //     } catch (error) {
-    //       console.log("error", error);
-    //     }
-    // }
-//     getUserInfo();
-//     // Posts();
-//   }, []);
- 
-  
-
+   
   return (
     <div className="Main">
         <p className="username">{name}</p>
