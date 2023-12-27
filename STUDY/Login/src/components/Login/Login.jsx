@@ -4,11 +4,19 @@ import { loginUser } from "../../constants/Login/Login";
 import { showToast } from "../../constants/Swal/Swal_alert";
 import { useNavigate } from "react-router-dom";
 import LOGO from "../../assets/img/Lofo.png";
+import CheckIcon from "../../assets/img/check.png";
+import axiosInstance from '../../lib/axiosInstance';
+import Cookies from "js-cookie";
 
 export default function Login() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const [LgoinKeep, setLoginKeep] = useState(false);
   const navigate = useNavigate();
+
+  const LoginIcon = () => {
+    setLoginKeep((prev) => !prev);
+  };
 
   // 유효성 검사
   const lookingForNum = (e) => {
@@ -25,11 +33,15 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const success = await loginUser(id, password);
+      const response = await axiosInstance.post('/login', { id, password });
+      const success = loginUser(id,password);
+      const {accessToken, refreshToken } = response.data;
       if (success) {
-        showToast("success", "로그인 성공");
-        navigate("/main");
-      } else{
+        showToast('success', '로그인 성공');
+        localStorage.setItem('accessToken', accessToken);
+        Cookies.set('refreshToken', refreshToken); // Save refresh token in cookies
+        navigate('/main');
+      } else {
         showToast("warning", "로그인 실패");
       }
     } catch (error) {
@@ -41,11 +53,11 @@ export default function Login() {
   return (
     <div className="Login">
       <div className="login-group">
-        <div class="logo">
-          <img src={LOGO} />
+        <div className="logo">
+          <img src={LOGO} alt="Logo" />
         </div>
         <div className="sc-breuTDiVspsI">
-          <div class="Main_FR">
+          <div className="Main_FR">
             <form action="" className="login_form">
               <h1>로그인</h1>
               <div className="loginid">
@@ -67,12 +79,26 @@ export default function Login() {
                 />
               </div>
 
+              <div className="KeppLogin">
+                <div
+                  className={LgoinKeep ? "openLogin" : "OLogin"}
+                  onClick={LoginIcon}
+                >
+                  {LgoinKeep && (
+                    <div className="Icon">
+                      <img src={CheckIcon} alt="" />
+                    </div>
+                  )}
+                </div>
+                <p className="KeppLoginText">로그인 유지</p>
+              </div>
               <input
                 type="button"
                 className="submit"
                 value="로그인"
                 onClick={handleLogin}
               />
+
               <div className="signup-link">
                 <p>
                   계정이 없으신가요?{" "}
