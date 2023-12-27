@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./main.css";
 import Menu from "../../assets/img/dehaze.png";
 import axios from "axios";
-import Cookies from 'js-cookie';
+import axiosInstance from '../../lib/axiosInstance';
 
 const Main = () => {
     const SERVERURL ="http://localhost:8080";
@@ -21,7 +21,7 @@ const Main = () => {
     const accessToken = localStorage.getItem("accessToken");
     const getUserInfo = async () => {
       try {
-        const response = await axios.get(`${SERVERURL}/profile`, {
+        const response = await axiosInstance.get(`${SERVERURL}/profile`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -31,6 +31,7 @@ const Main = () => {
         console.log("error", error);
       }
     };
+    
   
     getUserInfo();
   }, []);
