@@ -128,3 +128,10 @@ header > .LOGO{
     height: 500px;
     background-color: rgb(126, 126, 126);
 }
+.username{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+  }
