@@ -1,14 +1,14 @@
 
 import axios from "axios";
 
-const signup= async (userId, password,repassword)=>{
-  const SERVERURL = "#"; 
+const signup= async (userId,username, password)=>{
+  const SERVERURL = "http://localhost:8080/createuser"; 
 
   try {
     const response = await axios.post(SERVERURL, {
       userId: userId,
+      username: username,
       password: password,
-      repassword: repassword,
     });
 
     if (response.status === 200) {
