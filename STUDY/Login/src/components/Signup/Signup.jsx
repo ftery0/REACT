@@ -9,6 +9,7 @@ export default function Signup() {
   const [userid, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
   const lookingForNum = (e) => {
@@ -29,7 +30,8 @@ export default function Signup() {
     }
 
     try {
-      const success = await signup(userid, password, repassword);
+      const success = await signup(userid, username, password);
+      console.log(success);
       if (success) {
         showToast("success", "회원가입 성공");
         navigate("/");
@@ -54,8 +56,8 @@ export default function Signup() {
             <form action="" className="signupFrom" onSubmit={signupclick}>
             <h1>회원가입</h1>
               
-              <div className="sigupId">
-                <div className="idtext">ID</div>
+              <div className="sigup">
+                <div className="text">ID</div>
                 <input
                   className="Sigup1"
                   type="text"
@@ -65,8 +67,20 @@ export default function Signup() {
                   onChange={lookingForNum}
                 />
               </div>
-              <div className="sigupPW">
-              <div className="paswordtext">비밀번호</div>
+              <div className="sigup">
+              <div className="text">이름</div>
+                <input
+                  className="Sigup2"
+                  type="text"
+                  
+                  placeholder="이름을 써주세요"
+                  onChange={(event) => {
+                    setUsername(event.target.value);
+                  }}
+                />
+              </div>
+              <div className="sigup">
+              <div className="text">비밀번호</div>
                 <input
                   className="Sigup2"
                   type="password"
@@ -77,8 +91,8 @@ export default function Signup() {
                   }}
                 />
               </div>
-              <div className="sigupPW">
-              <div className="paswordtextAg">새로운 비밀번호</div>
+              <div className="sigup">
+              <div className="text">새로운 비밀번호</div>
                 <input
                   className="Sigup2"
                   type="password"
