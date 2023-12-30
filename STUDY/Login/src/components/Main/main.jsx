@@ -31,7 +31,20 @@ const Main = () => {
         console.log("error", error);
       }
     };
-    
+    const getPosts = async () => {
+      try {
+        const response = await axiosInstance.get(`${SERVERURL}/posts`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        setPosts(response.data);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+
+    getUserInfo();
   
     getUserInfo();
   }, []);
@@ -80,14 +93,14 @@ const Main = () => {
           <div className="Create_Post">
             <div className="Real_Post">
             </div>
-            {posts?.map((post)=>{
+            {posts.map((post) => (
                 <div className="Real_Post" key={post.id}>
-                    <div className="post_Name">{post.name}</div>
-                    <div className="post_pic">{post.image}</div>
-                    <div className="post_tit">{post.title}</div>
-                    <div className="posst_Like">{post.like}</div>
+                  <div className="post_Name">{post.name}</div>
+                  <div className="post_pic">{post.image}</div>
+                  <div className="post_tit">{post.title}</div>
+                  <div className="posst_Like">{post.like}</div>
                 </div>
-            })}
+              ))}
           </div>
         </div>
       </div>
