@@ -11,18 +11,6 @@ const Main = () => {
   const [name, setName] = useState();
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
-    const getUserInfo = async () => {
-      try {
-        const response = await axiosInstance.get(`${SERVERURL}/profile`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
-        setName(response.data.data.username);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
     const getPosts = async () => {
       try {
         const response = await axiosInstance.get(`${SERVERURL}/posts`, {
@@ -36,9 +24,6 @@ const Main = () => {
       }
     };
 
-    getUserInfo();
-
-    getUserInfo();
   }, []);
 
   return (

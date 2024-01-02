@@ -34,9 +34,11 @@ export default function Login() {
   const handleLogin = async () => {
     try {
       const response = await axiosInstance.post('/login', { id, password });
-      const success = loginUser(id,password);
+      let success = loginUser(id,password);
       const {accessToken, refreshToken } = response.data;
+      console.log(success);
       if (success) {
+        console.log(success);
         showToast('success', '로그인 성공');
         localStorage.setItem('accessToken', accessToken);
         Cookies.set('refreshToken', refreshToken); // Save refresh token in cookies
