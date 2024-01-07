@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./main.css";
-
+import ImageDiv from '../../assets/img/s.png'
 import axios from "axios";
 import axiosInstance from "../../lib/axiosInstance";
 import SideBar from "../SideBar/SideBar";
@@ -33,7 +33,12 @@ const Main = () => {
       <div className="MAINVIEW">
         <div className="POST">
           <div className="Create_Post">
-            <div className="Real_Post"></div>
+          <div className="Real_Post">
+          <div className="post_Name">김가영</div>
+                <div className="post_pic" > <img src={ImageDiv} alt="" /></div>
+                <div className="post_tit">소포!</div>
+                <div className="posst_Like">좋아요 20개</div>
+          </div>
             {posts.map((post) => (
               <div className="Real_Post" key={post.id}>
                 <div className="post_Name">{post.name}</div>
@@ -43,6 +48,7 @@ const Main = () => {
               </div>
             ))}
           </div>
+          
         </div>
       </div>
     </div>
