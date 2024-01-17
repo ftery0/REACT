@@ -30,6 +30,7 @@ export default function Signup() {
     }
 
     try {
+      console.log(userid);
       const success = await signup(userid, username, password);
       console.log(success);
       if (success) {
