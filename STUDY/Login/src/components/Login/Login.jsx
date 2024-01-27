@@ -1,55 +1,24 @@
-import React, { useState } from "react";
-import "./Login.css";
-import { loginUser } from "../../constants/Login/Login";
-import { showToast } from "../../constants/Swal/Swal_alert";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
+import useLogin from "../../Hooks/auth/useLogin";
 import LOGO from "../../assets/img/Lofo.png";
 import CheckIcon from "../../assets/img/check.png";
-import axiosInstance from '../../lib/axiosInstance';
-import Cookies from "js-cookie";
+
 
 export default function Login() {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
   const [LgoinKeep, setLoginKeep] = useState(false);
   const navigate = useNavigate();
+  const {
+    id,
+    password,
+    lookingForNum,
+    lookingForNumInPassword,
+    handleLogin,
+  } = useLogin();
 
   const LoginIcon = () => {
     setLoginKeep((prev) => !prev);
-  };
-
-  // 유효성 검사
-  const lookingForNum = (e) => {
-    const inputValue = e.target.value;
-    const onlyEnglishAndNumbers = inputValue.replace(/[^a-zA-Z0-9]/g, "");
-    setId(onlyEnglishAndNumbers);
-  };
-
-  const lookingForNumInPassword = (e) => {
-    const inputValue = e.target.value;
-    const onlyEnglishAndNumbers = inputValue.replace(/[^a-zA-Z0-9]/g, "");
-    setPassword(onlyEnglishAndNumbers);
-  };
-
-  const handleLogin = async () => {
-    try {
-      const response = await axiosInstance.post('/login', { id, password });
-      let success = loginUser(id,password);
-      const {accessToken, refreshToken } = response.data;
-      console.log(success);
-      if (success) {
-        console.log(success);
-        showToast('success', '로그인 성공');
-        localStorage.setItem('accessToken', accessToken);
-        Cookies.set('refreshToken', refreshToken); // Save refresh token in cookies
-        navigate('/main');
-      } else {
-        showToast("warning", "로그인 실패");
-      }
-    } catch (error) {
-      console.log(error);
-      showToast("error", "로그인 중 오류가 발생했습니다.");
-    }
   };
 
   return (
