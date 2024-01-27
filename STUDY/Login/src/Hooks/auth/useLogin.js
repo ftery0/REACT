@@ -10,6 +10,7 @@ const useLogin = () => {
   const navigate = useNavigate();
   const lookingForNum = (e) => {
     const inputValue = e.target.value;
+    console.log(inputValue);
     const onlyEnglishAndNumbers = inputValue.replace(/[^a-zA-Z0-9]/g, "");
     setId(onlyEnglishAndNumbers);
   };
@@ -22,11 +23,12 @@ const useLogin = () => {
 
   const handleLogin = async () => {
     try {
+        console.log(id);
       const response = await axios.post(`http://localhost:8080/login`, {
         id: id,
         password: password,
       });
-
+      console.log(response);
       if (response.status === 200) {
         showToast("success", "로그인 성공");
         localStorage.setItem("accessToken", response.data.accessToken);

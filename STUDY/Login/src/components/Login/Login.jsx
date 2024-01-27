@@ -10,8 +10,6 @@ export default function Login() {
   const [LgoinKeep, setLoginKeep] = useState(false);
   const navigate = useNavigate();
   const {
-    id,
-    password,
     lookingForNum,
     lookingForNumInPassword,
     handleLogin,
