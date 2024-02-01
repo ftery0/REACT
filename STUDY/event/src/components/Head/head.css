@@ -1,0 +1,28 @@
+.Head{
+    display: flex;
+    width: 100vw;
+    height: 80px;
+    background-color:rgba(156, 156, 156, 0.548);
+    align-items: center;
+    justify-content: space-between;
+}
+.Logo{
+    margin-left: 50px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.header_ul{
+    display: flex;
+}
+.header_li{
+    cursor: pointer;
+    text-decoration-line: none;
+    font-size: 23px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 50px;
+    list-style-type: none;
+    justify-content: space-between;
+    display: flex;
+}
