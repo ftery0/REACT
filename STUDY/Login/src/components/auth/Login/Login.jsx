@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
-import useLogin from "../../Hooks/auth/useLogin";
-import LOGO from "../../assets/img/Lofo.png";
-import CheckIcon from "../../assets/img/check.png";
+import useLogin from "../../../Hooks/auth/useLogin";
+import LOGO from "../../../assets/img/Lofo.png";
+import CheckIcon from "../../../assets/img/check.png";
 
 
 export default function Login() {

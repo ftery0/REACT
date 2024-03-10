@@ -1,49 +1,18 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { showToast } from "../../constants/Swal/Swal_alert";
-import { signup } from "../../constants/Sign/Sign";
 import "./Signup.css";
-import LOGO from "../../assets/img/Lofo.png";
+import LOGO from "../../../assets/img/Lofo.png";
+import UseSignup from "../../../Hooks/auth/useSignup";
 
 export default function Signup() {
-  const [userid, setUserId] = useState("");
-  const [password, setPassword] = useState("");
-  const [repassword, setRepassword] = useState("");
-  const [username, setUsername] = useState("");
-  const navigate = useNavigate();
-
-  const lookingForNum = (e) => {
-    const inputValue = e.target.value;
-    const onlyEnglishAndNumbers = inputValue.replace(/[^a-zA-Z0-9]/g, "");
-    setUserId(onlyEnglishAndNumbers);
-  };
-
-  const signupclick = async (e) => {
-    e.preventDefault();
-    if (userid === "") {
-      showToast("question", "아이디를 써주세요");
-      return;
-    }
-    if (password !== repassword) {
-      showToast("question", "비밀번호가 일치하지 않습니다.");
-      return;
-    }
-
-    try {
-      console.log(userid);
-      const success = await signup(userid, username, password);
-      console.log(success);
-      if (success) {
-        showToast("success", "회원가입 성공");
-        navigate("/");
-      } else {
-        showToast("warning", "회원가입 실패");
-      }
-    } catch (error) {
-      showToast("error", "서버 오류");
-    }
-  };
-
+ const {
+  userid,
+  setUsername,
+  lookingForNum,
+  signupclick,
+  setPassword,
+  setRepassword,
+  navigate,
+ }=UseSignup()
   return (
     <div className="SigupMain">
       <div className="Sigup-group">

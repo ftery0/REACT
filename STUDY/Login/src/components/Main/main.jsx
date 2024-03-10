@@ -1,30 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./main.css";
 import ImageDiv from '../../assets/img/s.png'
-import axios from "axios";
-import axiosInstance from "../../lib/axiosInstance";
 import SideBar from "../SideBar/SideBar";
+import UsePost from "../../Hooks/Post/usePost";
 
 const Main = () => {
-  const SERVERURL = "http://localhost:8080";
-  const [posts, setPosts] = useState([]);
-  const [name, setName] = useState();
-  useEffect(() => {
-    const accessToken = localStorage.getItem("accessToken");
-    const getPosts = async () => {
-      try {
-        const response = await axiosInstance.get(`${SERVERURL}/posts`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        });
-        setPosts(response.data);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-
-  }, []);
+const {
+  name,
+    posts,
+    setName,
+}=UsePost();
 
   return (
     <div className="Main">
