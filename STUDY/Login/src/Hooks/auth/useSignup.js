@@ -27,11 +27,11 @@ const UseSignup= ()=>{
       }
   
       try {
-        console.log(userid);
-        const success = await axios.post("",{
-        
+        const success = await axios.post("http://localhost:8080/createuser",{
+            id: userid,
+            username: username,
+            password: password,
         })
-        console.log(success);
         if (success) {
           showToast("success", "회원가입 성공");
           navigate("/");
