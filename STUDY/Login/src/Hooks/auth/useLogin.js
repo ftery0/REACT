@@ -26,11 +26,12 @@ const useLogin = () => {
         id: id,
         password: password,
       });
-      console.log(response);
-      if (response.status === 200) {
+      console.log(response); // 응답 구조 확인
+      if (response.status === 200 && response.data.accessToken) {
         showToast("success", "로그인 성공");
-        localStorage.setItem("accessToken", response.data.data.accessToken);
-        Cookies.set("refreshToken",  response.data.data.refreshToken);
+        // 응답 구조에 따라 아래 라인을 조정해야 할 수 있습니다.
+        localStorage.setItem("accessToken", response.data.accessToken);
+        Cookies.set("refreshToken", response.data.refreshToken);
         navigate("/main");
       } else {
         showToast("warning", "로그인 실패");
@@ -40,7 +41,7 @@ const useLogin = () => {
       showToast("error", "로그인 중 오류가 발생했습니다.");
     }
   };
-
+  
   return {
     id,
     password,
