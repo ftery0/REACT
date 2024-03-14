@@ -16,11 +16,11 @@ export default function Signup() {
   return (
     <div className="SigupMain">
       <div className="Sigup-group">
-        <div class="logo">
+        <div className="logo">
           <img src={LOGO} />
         </div>
         <div className="sc-breuTDiVspsI">
-          <div class="Main_FR">
+          <div className="Main_FR">
             
 
             <form action="" className="signupFrom" onSubmit={signupclick}>
