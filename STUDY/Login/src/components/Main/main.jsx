@@ -6,9 +6,7 @@ import UsePost from "../../Hooks/Post/usePost";
 
 const Main = () => {
 const {
-  name,
     posts,
-    setName,
 }=UsePost();
 
   return (
