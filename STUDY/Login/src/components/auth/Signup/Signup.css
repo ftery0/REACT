@@ -1,0 +1,104 @@
+.SigupMain {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F2C9D4;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.Sigup-group > h2 {
+  position: absolute;
+  top: 40px;
+}
+.Sigup-group {
+  width: 1200px;
+  height: 650px;
+  display: flex;
+  justify-content: space-around;
+  animation-name: Sigupgroup;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.signupFrom{
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 28px;
+  justify-content: space-between;
+  
+}
+.signupFrom >h1{
+  flex-direction: column;
+  row-gap: 50px;
+  text-align: center;
+}
+.sigup{
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.text {
+  font-size: 14px;
+  color: rgb(161, 161, 161);
+  line-height: 18px;
+}
+.Sigup1 {
+  border-bottom: 1px solid #c5c5c5;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+}
+
+.Sigup2 {
+  border-bottom: 1px solid #c5c5c5;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+}
+
+.submit {
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 30px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.login-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.login-link button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 15px;
+}
+@keyframes Sigupgroup {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

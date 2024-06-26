@@ -1,0 +1,201 @@
+*{
+  margin: 0;
+  border: 0;
+}
+
+.Login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F2C9D4;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.logo{
+  min-width: 600px;
+  max-width: 600px;
+  height: 100%;
+  position: relative;
+}
+
+.login-group {
+  width: 1200px;
+  height: 650px;
+  display: flex;
+  justify-content: space-around;
+  animation-name: logingroup;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.sc-breuTDiVspsI{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.logo{
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.logo  > img{
+  width: 100%;
+  height: 100%;
+  
+}
+
+.login_form{
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 28px;
+  justify-content: space-between;
+}
+form {
+  width: 30%;
+  height: auto;
+}
+.Main_FR{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.login_form > h1{
+  flex-direction: column;
+  row-gap: 50px;
+  text-align: center;
+}
+.loginid{
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.idtext{
+  font-size: 14px;
+  color: rgb(161, 161, 161);
+  line-height: 18px;
+}
+.login1 {
+  border-bottom: 1px solid #C5C5C5;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+}
+.lgoinpasword{
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.paswordtext{
+  font-size: 14px;
+  color: rgb(161, 161, 161);
+  line-height: 18px;
+}
+.login2 {
+  border-bottom: 1px solid #C5C5C5;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none; 
+}
+
+.submit {
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  background-color: #F294B6;
+  color: white;
+}
+
+.signup-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.signup-link button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 15px;
+}
+@keyframes logingroup {
+  0% {opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.KeppLogin{
+  width: 100%;
+    height: 30px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: start;
+    column-gap: 8px;
+}
+.OLogin{
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    border: 0.1rem solid rgb(204, 204, 204);
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.KeppLogin > p{
+  font-size: 14px;
+}
+.openLogin{
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  border: 0.1rem solid rgb(0, 103, 188);
+  cursor: pointer;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.Icon{
+  width: 18px;
+    height: 18px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    color: rgb(0, 103, 188);
+}
+.Icon >img{
+  width: 13px;
+  height: 13px;
+}
