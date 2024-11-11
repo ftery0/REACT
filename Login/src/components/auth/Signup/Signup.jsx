@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Signup.css";
 import LOGO from "../../../assets/img/Lofo.png";
 import UseSignup from "../../../Hooks/auth/useSignup";
@@ -17,7 +17,7 @@ export default function Signup() {
     <div className="SigupMain">
       <div className="Sigup-group">
         <div className="logo">
-          <img src={LOGO} />
+          <img src={LOGO} alt="로고"/>
         </div>
         <div className="sc-breuTDiVspsI">
           <div className="Main_FR">

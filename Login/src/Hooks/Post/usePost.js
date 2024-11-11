@@ -19,7 +19,7 @@ const UsePost = () => {
   };
   useEffect(() => {
     getPosts();
-  }, []);
+  }, [getPosts()]);
   return {
     posts,
   };

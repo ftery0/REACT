@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./main.css";
 import ImageDiv from '../../assets/img/s.png'
 import SideBar from "../SideBar/SideBar";
