@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 const UsePost = () => {
   const SERVERURL = "http://localhost:8080";
   const [posts, setPosts] = useState([]);
-  const [name, setName] = useState();
   const accessToken = localStorage.getItem("accessToken");
+  
   const getPosts = async () => {
     try {
       const response = await axios.get(`${SERVERURL}/posts`, {
@@ -19,7 +19,7 @@ const UsePost = () => {
   };
   useEffect(() => {
     getPosts();
-  }, [getPosts()]);
+  }, [getPosts]);
   return {
     posts,
   };
